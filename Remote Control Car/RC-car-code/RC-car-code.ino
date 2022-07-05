@@ -1,7 +1,7 @@
-int LeftMotorForward = 5;
-int LeftMotorReverse = 3;
-int RightMotorForward = 9;
-int RightMotorReverse = 6;
+int LeftMotorForward = 11;
+int LeftMotorReverse = 9;
+int RightMotorForward = 3;
+int RightMotorReverse = 5;
 
 char command;
 
@@ -24,28 +24,23 @@ void loop()
 
     Stop(); //initialize with motors stoped
 
-    if (command == "F")
+    switch (command)
     {
-      forward();
-      break;
-    }
-
-    else if (command == "B")
-    {
-      back();
-      break;
-    }
-
-    else if (command == "L")
-    {
-      left();
-      break;
-    }
-
-    else if (command == "R")
-    {
-      right();
-      break;
+      case 'F':
+        forward();
+        break;
+      case 'B':
+        back();
+        break;
+      case 'L':
+        left();
+        break;
+      case 'R':
+        right();
+        break;
+      case 'S':
+        Stop();
+        break;
     }
 
   }
@@ -53,24 +48,44 @@ void loop()
 }
 void forward()
 {
+  analogWrite(LeftMotorForward, 0);
+  analogWrite(LeftMotorReverse, 0);
+  analogWrite(RightMotorForward, 0);
+  analogWrite(RightMotorReverse, 0);
+
   analogWrite(LeftMotorForward, 255);
   analogWrite(RightMotorForward, 255);
 }
 
 void back()
 {
+  analogWrite(LeftMotorForward, 0);
+  analogWrite(LeftMotorReverse, 0);
+  analogWrite(RightMotorForward, 0);
+  analogWrite(RightMotorReverse, 0);
+
   analogWrite(LeftMotorReverse, 255);
   analogWrite(RightMotorReverse, 255);
 }
 
 void left()
 {
+  analogWrite(LeftMotorForward, 0);
+  analogWrite(LeftMotorReverse, 0);
+  analogWrite(RightMotorForward, 0);
+  analogWrite(RightMotorReverse, 0);
+
   analogWrite(LeftMotorReverse, 255);
   analogWrite(RightMotorForward, 255);
 }
 
 void right()
 {
+  analogWrite(LeftMotorForward, 0);
+  analogWrite(LeftMotorReverse, 0);
+  analogWrite(RightMotorForward, 0);
+  analogWrite(RightMotorReverse, 0);
+
   analogWrite(LeftMotorForward, 255);
   analogWrite(RightMotorReverse, 255);
 }
@@ -78,5 +93,7 @@ void right()
 void Stop()
 {
   analogWrite(LeftMotorForward, 0);
+  analogWrite(LeftMotorReverse, 0);
   analogWrite(RightMotorForward, 0);
+  analogWrite(RightMotorReverse, 0);
 }
