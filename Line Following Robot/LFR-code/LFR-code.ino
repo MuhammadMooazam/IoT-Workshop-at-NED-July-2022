@@ -1,8 +1,7 @@
-int LeftMotorForward = 5;
-int LeftMotorReverse = 3;
-
-int RightMotorForward = 9;
-int RightMotorReverse = 6;
+int RightMotorForward = 11;
+int RightMotorReverse = 9;
+int LeftMotorForward = 3;
+int LeftMotorReverse = 5;
 
 int left = A2;
 int right = A1;
