@@ -1,7 +1,7 @@
-int LeftMotorForward = 11;
-int LeftMotorReverse = 9;
-int RightMotorForward = 3;
-int RightMotorReverse = 5;
+int RightMotorForward = 11;
+int RightMotorReverse = 9;
+int LeftMotorForward = 3;
+int LeftMotorReverse = 5;
 
 char command;
 
